@@ -39,7 +39,7 @@ public class CashRegisterTicket {
         int _quantity = 0;
         double _priceHT = 0.0;
         String _letterStateCode = "";
-
+        double _tauxred=0;
         // Liste des articles à facturer
         List<Article> listeArticles = new ArrayList<Article>();
 
@@ -80,6 +80,10 @@ public class CashRegisterTicket {
             _choix = sc1.nextLine();
 
         } while (_choix.equalsIgnoreCase("oui") ? true : false);
+
+        //demande du taux de réduction
+        System.out.println("\nQuelle est le taux de réduction ?");
+        _tauxred = Double.parseDouble(sc1.nextLine());
 
         // Affiche la liste des articles que le client souhaite consommer
         TicketDeCaisse ticket = new TicketDeCaisse(listeArticles);
